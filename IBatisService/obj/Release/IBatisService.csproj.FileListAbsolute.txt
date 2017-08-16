@@ -1,0 +1,10 @@
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Release\IBatisService.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Release\IBatisService.pdb
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Release\Castle.DynamicProxy.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Release\IBatisNet.Common.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Release\IBatisNet.DataMapper.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Release\IBatisNet.Common.xml
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Release\IBatisNet.DataMapper.xml
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\obj\Release\IBatisService.csprojResolveAssemblyReference.cache
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\obj\Release\IBatisService.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\obj\Release\IBatisService.pdb

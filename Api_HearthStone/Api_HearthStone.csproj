@@ -1,0 +1,1485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F1F00C5-5C96-409E-A195-B43155344913}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Api_HearthStone</RootNamespace>
+    <AssemblyName>Api_HearthStone</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HSController.cs" />
+    <Compile Include="Unity\CorsAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Hs_CardImg\10.png" />
+    <Content Include="Hs_CardImg\100.png" />
+    <Content Include="Hs_CardImg\1000.png" />
+    <Content Include="Hs_CardImg\1001.png" />
+    <Content Include="Hs_CardImg\1002.png" />
+    <Content Include="Hs_CardImg\1003.png" />
+    <Content Include="Hs_CardImg\1004.png" />
+    <Content Include="Hs_CardImg\1005.png" />
+    <Content Include="Hs_CardImg\1006.png" />
+    <Content Include="Hs_CardImg\1007.png" />
+    <Content Include="Hs_CardImg\1008.png" />
+    <Content Include="Hs_CardImg\1009.png" />
+    <Content Include="Hs_CardImg\101.png" />
+    <Content Include="Hs_CardImg\1010.png" />
+    <Content Include="Hs_CardImg\1011.png" />
+    <Content Include="Hs_CardImg\1012.png" />
+    <Content Include="Hs_CardImg\1013.png" />
+    <Content Include="Hs_CardImg\1014.png" />
+    <Content Include="Hs_CardImg\1015.png" />
+    <Content Include="Hs_CardImg\1016.png" />
+    <Content Include="Hs_CardImg\1017.png" />
+    <Content Include="Hs_CardImg\1018.png" />
+    <Content Include="Hs_CardImg\1019.png" />
+    <Content Include="Hs_CardImg\102.png" />
+    <Content Include="Hs_CardImg\1020.png" />
+    <Content Include="Hs_CardImg\1021.png" />
+    <Content Include="Hs_CardImg\1022.png" />
+    <Content Include="Hs_CardImg\1023.png" />
+    <Content Include="Hs_CardImg\1024.png" />
+    <Content Include="Hs_CardImg\1025.png" />
+    <Content Include="Hs_CardImg\1026.png" />
+    <Content Include="Hs_CardImg\1027.png" />
+    <Content Include="Hs_CardImg\1028.png" />
+    <Content Include="Hs_CardImg\1029.png" />
+    <Content Include="Hs_CardImg\1030.png" />
+    <Content Include="Hs_CardImg\1031.png" />
+    <Content Include="Hs_CardImg\1032.png" />
+    <Content Include="Hs_CardImg\1033.png" />
+    <Content Include="Hs_CardImg\1034.png" />
+    <Content Include="Hs_CardImg\1035.png" />
+    <Content Include="Hs_CardImg\1036.png" />
+    <Content Include="Hs_CardImg\1037.png" />
+    <Content Include="Hs_CardImg\1038.png" />
+    <Content Include="Hs_CardImg\1039.png" />
+    <Content Include="Hs_CardImg\104.png" />
+    <Content Include="Hs_CardImg\1040.png" />
+    <Content Include="Hs_CardImg\1041.png" />
+    <Content Include="Hs_CardImg\1042.png" />
+    <Content Include="Hs_CardImg\1043.png" />
+    <Content Include="Hs_CardImg\1044.png" />
+    <Content Include="Hs_CardImg\1045.png" />
+    <Content Include="Hs_CardImg\1046.png" />
+    <Content Include="Hs_CardImg\1047.png" />
+    <Content Include="Hs_CardImg\1048.png" />
+    <Content Include="Hs_CardImg\1049.png" />
+    <Content Include="Hs_CardImg\105.png" />
+    <Content Include="Hs_CardImg\1050.png" />
+    <Content Include="Hs_CardImg\1051.png" />
+    <Content Include="Hs_CardImg\1052.png" />
+    <Content Include="Hs_CardImg\1053.png" />
+    <Content Include="Hs_CardImg\1054.png" />
+    <Content Include="Hs_CardImg\1055.png" />
+    <Content Include="Hs_CardImg\1056.png" />
+    <Content Include="Hs_CardImg\1057.png" />
+    <Content Include="Hs_CardImg\1058.png" />
+    <Content Include="Hs_CardImg\1059.png" />
+    <Content Include="Hs_CardImg\106.png" />
+    <Content Include="Hs_CardImg\1060.png" />
+    <Content Include="Hs_CardImg\1061.png" />
+    <Content Include="Hs_CardImg\1062.png" />
+    <Content Include="Hs_CardImg\1063.png" />
+    <Content Include="Hs_CardImg\1064.png" />
+    <Content Include="Hs_CardImg\1065.png" />
+    <Content Include="Hs_CardImg\1066.png" />
+    <Content Include="Hs_CardImg\1067.png" />
+    <Content Include="Hs_CardImg\1068.png" />
+    <Content Include="Hs_CardImg\1069.png" />
+    <Content Include="Hs_CardImg\107.png" />
+    <Content Include="Hs_CardImg\1070.png" />
+    <Content Include="Hs_CardImg\1071.png" />
+    <Content Include="Hs_CardImg\1072.png" />
+    <Content Include="Hs_CardImg\1073.png" />
+    <Content Include="Hs_CardImg\1074.png" />
+    <Content Include="Hs_CardImg\1075.png" />
+    <Content Include="Hs_CardImg\1076.png" />
+    <Content Include="Hs_CardImg\1077.png" />
+    <Content Include="Hs_CardImg\1078.png" />
+    <Content Include="Hs_CardImg\1079.png" />
+    <Content Include="Hs_CardImg\1080.png" />
+    <Content Include="Hs_CardImg\1081.png" />
+    <Content Include="Hs_CardImg\1082.png" />
+    <Content Include="Hs_CardImg\1083.png" />
+    <Content Include="Hs_CardImg\1084.png" />
+    <Content Include="Hs_CardImg\1085.png" />
+    <Content Include="Hs_CardImg\1086.png" />
+    <Content Include="Hs_CardImg\1087.png" />
+    <Content Include="Hs_CardImg\1088.png" />
+    <Content Include="Hs_CardImg\1089.png" />
+    <Content Include="Hs_CardImg\1090.png" />
+    <Content Include="Hs_CardImg\1091.png" />
+    <Content Include="Hs_CardImg\1092.png" />
+    <Content Include="Hs_CardImg\1093.png" />
+    <Content Include="Hs_CardImg\1094.png" />
+    <Content Include="Hs_CardImg\1095.png" />
+    <Content Include="Hs_CardImg\1096.png" />
+    <Content Include="Hs_CardImg\1097.png" />
+    <Content Include="Hs_CardImg\1098.png" />
+    <Content Include="Hs_CardImg\1099.png" />
+    <Content Include="Hs_CardImg\110.png" />
+    <Content Include="Hs_CardImg\1100.png" />
+    <Content Include="Hs_CardImg\1101.png" />
+    <Content Include="Hs_CardImg\1102.png" />
+    <Content Include="Hs_CardImg\1103.png" />
+    <Content Include="Hs_CardImg\1104.png" />
+    <Content Include="Hs_CardImg\1105.png" />
+    <Content Include="Hs_CardImg\1106.png" />
+    <Content Include="Hs_CardImg\1107.png" />
+    <Content Include="Hs_CardImg\1108.png" />
+    <Content Include="Hs_CardImg\1109.png" />
+    <Content Include="Hs_CardImg\111.png" />
+    <Content Include="Hs_CardImg\1110.png" />
+    <Content Include="Hs_CardImg\1111.png" />
+    <Content Include="Hs_CardImg\1112.png" />
+    <Content Include="Hs_CardImg\1113.png" />
+    <Content Include="Hs_CardImg\1114.png" />
+    <Content Include="Hs_CardImg\1115.png" />
+    <Content Include="Hs_CardImg\1116.png" />
+    <Content Include="Hs_CardImg\1117.png" />
+    <Content Include="Hs_CardImg\1118.png" />
+    <Content Include="Hs_CardImg\1119.png" />
+    <Content Include="Hs_CardImg\1120.png" />
+    <Content Include="Hs_CardImg\1121.png" />
+    <Content Include="Hs_CardImg\1122.png" />
+    <Content Include="Hs_CardImg\1123.png" />
+    <Content Include="Hs_CardImg\1124.png" />
+    <Content Include="Hs_CardImg\1125.png" />
+    <Content Include="Hs_CardImg\1126.png" />
+    <Content Include="Hs_CardImg\1127.png" />
+    <Content Include="Hs_CardImg\1128.png" />
+    <Content Include="Hs_CardImg\1129.png" />
+    <Content Include="Hs_CardImg\1130.png" />
+    <Content Include="Hs_CardImg\1131.png" />
+    <Content Include="Hs_CardImg\1132.png" />
+    <Content Include="Hs_CardImg\1133.png" />
+    <Content Include="Hs_CardImg\1134.png" />
+    <Content Include="Hs_CardImg\1135.png" />
+    <Content Include="Hs_CardImg\1136.png" />
+    <Content Include="Hs_CardImg\1137.png" />
+    <Content Include="Hs_CardImg\1138.png" />
+    <Content Include="Hs_CardImg\1139.png" />
+    <Content Include="Hs_CardImg\114.png" />
+    <Content Include="Hs_CardImg\1140.png" />
+    <Content Include="Hs_CardImg\1141.png" />
+    <Content Include="Hs_CardImg\1142.png" />
+    <Content Include="Hs_CardImg\1143.png" />
+    <Content Include="Hs_CardImg\1144.png" />
+    <Content Include="Hs_CardImg\1145.png" />
+    <Content Include="Hs_CardImg\1146.png" />
+    <Content Include="Hs_CardImg\1147.png" />
+    <Content Include="Hs_CardImg\1148.png" />
+    <Content Include="Hs_CardImg\1149.png" />
+    <Content Include="Hs_CardImg\115.png" />
+    <Content Include="Hs_CardImg\1150.png" />
+    <Content Include="Hs_CardImg\1151.png" />
+    <Content Include="Hs_CardImg\1152.png" />
+    <Content Include="Hs_CardImg\1153.png" />
+    <Content Include="Hs_CardImg\1154.png" />
+    <Content Include="Hs_CardImg\1155.png" />
+    <Content Include="Hs_CardImg\1156.png" />
+    <Content Include="Hs_CardImg\1157.png" />
+    <Content Include="Hs_CardImg\1158.png" />
+    <Content Include="Hs_CardImg\1159.png" />
+    <Content Include="Hs_CardImg\1160.png" />
+    <Content Include="Hs_CardImg\1161.png" />
+    <Content Include="Hs_CardImg\1162.png" />
+    <Content Include="Hs_CardImg\1163.png" />
+    <Content Include="Hs_CardImg\1164.png" />
+    <Content Include="Hs_CardImg\1165.png" />
+    <Content Include="Hs_CardImg\1166.png" />
+    <Content Include="Hs_CardImg\1167.png" />
+    <Content Include="Hs_CardImg\1168.png" />
+    <Content Include="Hs_CardImg\1169.png" />
+    <Content Include="Hs_CardImg\117.png" />
+    <Content Include="Hs_CardImg\1170.png" />
+    <Content Include="Hs_CardImg\1171.png" />
+    <Content Include="Hs_CardImg\1172.png" />
+    <Content Include="Hs_CardImg\1173.png" />
+    <Content Include="Hs_CardImg\1174.png" />
+    <Content Include="Hs_CardImg\1175.png" />
+    <Content Include="Hs_CardImg\1176.png" />
+    <Content Include="Hs_CardImg\1177.png" />
+    <Content Include="Hs_CardImg\1178.png" />
+    <Content Include="Hs_CardImg\1179.png" />
+    <Content Include="Hs_CardImg\1180.png" />
+    <Content Include="Hs_CardImg\1181.png" />
+    <Content Include="Hs_CardImg\1182.png" />
+    <Content Include="Hs_CardImg\1183.png" />
+    <Content Include="Hs_CardImg\1184.png" />
+    <Content Include="Hs_CardImg\1185.png" />
+    <Content Include="Hs_CardImg\1186.png" />
+    <Content Include="Hs_CardImg\1187.png" />
+    <Content Include="Hs_CardImg\1188.png" />
+    <Content Include="Hs_CardImg\1189.png" />
+    <Content Include="Hs_CardImg\119.png" />
+    <Content Include="Hs_CardImg\1190.png" />
+    <Content Include="Hs_CardImg\1191.png" />
+    <Content Include="Hs_CardImg\1192.png" />
+    <Content Include="Hs_CardImg\1193.png" />
+    <Content Include="Hs_CardImg\1194.png" />
+    <Content Include="Hs_CardImg\1195.png" />
+    <Content Include="Hs_CardImg\1196.png" />
+    <Content Include="Hs_CardImg\1197.png" />
+    <Content Include="Hs_CardImg\1198.png" />
+    <Content Include="Hs_CardImg\1199.png" />
+    <Content Include="Hs_CardImg\12.png" />
+    <Content Include="Hs_CardImg\120.png" />
+    <Content Include="Hs_CardImg\1200.png" />
+    <Content Include="Hs_CardImg\1201.png" />
+    <Content Include="Hs_CardImg\1202.png" />
+    <Content Include="Hs_CardImg\1203.png" />
+    <Content Include="Hs_CardImg\1204.png" />
+    <Content Include="Hs_CardImg\1205.png" />
+    <Content Include="Hs_CardImg\1206.png" />
+    <Content Include="Hs_CardImg\1207.png" />
+    <Content Include="Hs_CardImg\1208.png" />
+    <Content Include="Hs_CardImg\1209.png" />
+    <Content Include="Hs_CardImg\1210.png" />
+    <Content Include="Hs_CardImg\1211.png" />
+    <Content Include="Hs_CardImg\1212.png" />
+    <Content Include="Hs_CardImg\1213.png" />
+    <Content Include="Hs_CardImg\1214.png" />
+    <Content Include="Hs_CardImg\1215.png" />
+    <Content Include="Hs_CardImg\1216.png" />
+    <Content Include="Hs_CardImg\1217.png" />
+    <Content Include="Hs_CardImg\1218.png" />
+    <Content Include="Hs_CardImg\1219.png" />
+    <Content Include="Hs_CardImg\122.png" />
+    <Content Include="Hs_CardImg\1220.png" />
+    <Content Include="Hs_CardImg\1221.png" />
+    <Content Include="Hs_CardImg\1222.png" />
+    <Content Include="Hs_CardImg\1223.png" />
+    <Content Include="Hs_CardImg\1224.png" />
+    <Content Include="Hs_CardImg\1225.png" />
+    <Content Include="Hs_CardImg\1226.png" />
+    <Content Include="Hs_CardImg\1227.png" />
+    <Content Include="Hs_CardImg\1228.png" />
+    <Content Include="Hs_CardImg\1229.png" />
+    <Content Include="Hs_CardImg\123.png" />
+    <Content Include="Hs_CardImg\1230.png" />
+    <Content Include="Hs_CardImg\1231.png" />
+    <Content Include="Hs_CardImg\1232.png" />
+    <Content Include="Hs_CardImg\1233.png" />
+    <Content Include="Hs_CardImg\1234.png" />
+    <Content Include="Hs_CardImg\1235.png" />
+    <Content Include="Hs_CardImg\1236.png" />
+    <Content Include="Hs_CardImg\1237.png" />
+    <Content Include="Hs_CardImg\1238.png" />
+    <Content Include="Hs_CardImg\1239.png" />
+    <Content Include="Hs_CardImg\124.png" />
+    <Content Include="Hs_CardImg\1240.png" />
+    <Content Include="Hs_CardImg\1241.png" />
+    <Content Include="Hs_CardImg\1242.png" />
+    <Content Include="Hs_CardImg\1243.png" />
+    <Content Include="Hs_CardImg\1244.png" />
+    <Content Include="Hs_CardImg\1245.png" />
+    <Content Include="Hs_CardImg\1246.png" />
+    <Content Include="Hs_CardImg\1247.png" />
+    <Content Include="Hs_CardImg\1248.png" />
+    <Content Include="Hs_CardImg\1249.png" />
+    <Content Include="Hs_CardImg\125.png" />
+    <Content Include="Hs_CardImg\1250.png" />
+    <Content Include="Hs_CardImg\1251.png" />
+    <Content Include="Hs_CardImg\1252.png" />
+    <Content Include="Hs_CardImg\1253.png" />
+    <Content Include="Hs_CardImg\1254.png" />
+    <Content Include="Hs_CardImg\1255.png" />
+    <Content Include="Hs_CardImg\1256.png" />
+    <Content Include="Hs_CardImg\1257.png" />
+    <Content Include="Hs_CardImg\1258.png" />
+    <Content Include="Hs_CardImg\1259.png" />
+    <Content Include="Hs_CardImg\1260.png" />
+    <Content Include="Hs_CardImg\1261.png" />
+    <Content Include="Hs_CardImg\1262.png" />
+    <Content Include="Hs_CardImg\1263.png" />
+    <Content Include="Hs_CardImg\1264.png" />
+    <Content Include="Hs_CardImg\1265.png" />
+    <Content Include="Hs_CardImg\1266.png" />
+    <Content Include="Hs_CardImg\1267.png" />
+    <Content Include="Hs_CardImg\1268.png" />
+    <Content Include="Hs_CardImg\1269.png" />
+    <Content Include="Hs_CardImg\1270.png" />
+    <Content Include="Hs_CardImg\1271.png" />
+    <Content Include="Hs_CardImg\1272.png" />
+    <Content Include="Hs_CardImg\1273.png" />
+    <Content Include="Hs_CardImg\1274.png" />
+    <Content Include="Hs_CardImg\1275.png" />
+    <Content Include="Hs_CardImg\1276.png" />
+    <Content Include="Hs_CardImg\1277.png" />
+    <Content Include="Hs_CardImg\1278.png" />
+    <Content Include="Hs_CardImg\1279.png" />
+    <Content Include="Hs_CardImg\1280.png" />
+    <Content Include="Hs_CardImg\1281.png" />
+    <Content Include="Hs_CardImg\1282.png" />
+    <Content Include="Hs_CardImg\1283.png" />
+    <Content Include="Hs_CardImg\1284.png" />
+    <Content Include="Hs_CardImg\1285.png" />
+    <Content Include="Hs_CardImg\1286.png" />
+    <Content Include="Hs_CardImg\1287.png" />
+    <Content Include="Hs_CardImg\1288.png" />
+    <Content Include="Hs_CardImg\1289.png" />
+    <Content Include="Hs_CardImg\1290.png" />
+    <Content Include="Hs_CardImg\1291.png" />
+    <Content Include="Hs_CardImg\1292.png" />
+    <Content Include="Hs_CardImg\1293.png" />
+    <Content Include="Hs_CardImg\1294.png" />
+    <Content Include="Hs_CardImg\1295.png" />
+    <Content Include="Hs_CardImg\1296.png" />
+    <Content Include="Hs_CardImg\1297.png" />
+    <Content Include="Hs_CardImg\1298.png" />
+    <Content Include="Hs_CardImg\1299.png" />
+    <Content Include="Hs_CardImg\13.png" />
+    <Content Include="Hs_CardImg\130.png" />
+    <Content Include="Hs_CardImg\1300.png" />
+    <Content Include="Hs_CardImg\1301.png" />
+    <Content Include="Hs_CardImg\1302.png" />
+    <Content Include="Hs_CardImg\1303.png" />
+    <Content Include="Hs_CardImg\1304.png" />
+    <Content Include="Hs_CardImg\1305.png" />
+    <Content Include="Hs_CardImg\1306.png" />
+    <Content Include="Hs_CardImg\1307.png" />
+    <Content Include="Hs_CardImg\1308.png" />
+    <Content Include="Hs_CardImg\1309.png" />
+    <Content Include="Hs_CardImg\131.png" />
+    <Content Include="Hs_CardImg\1310.png" />
+    <Content Include="Hs_CardImg\1311.png" />
+    <Content Include="Hs_CardImg\1312.png" />
+    <Content Include="Hs_CardImg\1313.png" />
+    <Content Include="Hs_CardImg\1314.png" />
+    <Content Include="Hs_CardImg\1315.png" />
+    <Content Include="Hs_CardImg\1316.png" />
+    <Content Include="Hs_CardImg\1317.png" />
+    <Content Include="Hs_CardImg\1318.png" />
+    <Content Include="Hs_CardImg\1319.png" />
+    <Content Include="Hs_CardImg\132.png" />
+    <Content Include="Hs_CardImg\1320.png" />
+    <Content Include="Hs_CardImg\1321.png" />
+    <Content Include="Hs_CardImg\1322.png" />
+    <Content Include="Hs_CardImg\1323.png" />
+    <Content Include="Hs_CardImg\1324.png" />
+    <Content Include="Hs_CardImg\1325.png" />
+    <Content Include="Hs_CardImg\1326.png" />
+    <Content Include="Hs_CardImg\1327.png" />
+    <Content Include="Hs_CardImg\1328.png" />
+    <Content Include="Hs_CardImg\1329.png" />
+    <Content Include="Hs_CardImg\1330.png" />
+    <Content Include="Hs_CardImg\1331.png" />
+    <Content Include="Hs_CardImg\1332.png" />
+    <Content Include="Hs_CardImg\1333.png" />
+    <Content Include="Hs_CardImg\1334.png" />
+    <Content Include="Hs_CardImg\1335.png" />
+    <Content Include="Hs_CardImg\1336.png" />
+    <Content Include="Hs_CardImg\1337.png" />
+    <Content Include="Hs_CardImg\1338.png" />
+    <Content Include="Hs_CardImg\1339.png" />
+    <Content Include="Hs_CardImg\1340.png" />
+    <Content Include="Hs_CardImg\1341.png" />
+    <Content Include="Hs_CardImg\1342.png" />
+    <Content Include="Hs_CardImg\1343.png" />
+    <Content Include="Hs_CardImg\1344.png" />
+    <Content Include="Hs_CardImg\1345.png" />
+    <Content Include="Hs_CardImg\1346.png" />
+    <Content Include="Hs_CardImg\1347.png" />
+    <Content Include="Hs_CardImg\1348.png" />
+    <Content Include="Hs_CardImg\1349.png" />
+    <Content Include="Hs_CardImg\135.png" />
+    <Content Include="Hs_CardImg\1350.png" />
+    <Content Include="Hs_CardImg\1351.png" />
+    <Content Include="Hs_CardImg\1352.png" />
+    <Content Include="Hs_CardImg\1353.png" />
+    <Content Include="Hs_CardImg\1354.png" />
+    <Content Include="Hs_CardImg\1355.png" />
+    <Content Include="Hs_CardImg\1356.png" />
+    <Content Include="Hs_CardImg\1357.png" />
+    <Content Include="Hs_CardImg\1358.png" />
+    <Content Include="Hs_CardImg\1359.png" />
+    <Content Include="Hs_CardImg\136.png" />
+    <Content Include="Hs_CardImg\1360.png" />
+    <Content Include="Hs_CardImg\1361.png" />
+    <Content Include="Hs_CardImg\1362.png" />
+    <Content Include="Hs_CardImg\1363.png" />
+    <Content Include="Hs_CardImg\1364.png" />
+    <Content Include="Hs_CardImg\1365.png" />
+    <Content Include="Hs_CardImg\1366.png" />
+    <Content Include="Hs_CardImg\1367.png" />
+    <Content Include="Hs_CardImg\1368.png" />
+    <Content Include="Hs_CardImg\1369.png" />
+    <Content Include="Hs_CardImg\1370.png" />
+    <Content Include="Hs_CardImg\1371.png" />
+    <Content Include="Hs_CardImg\1372.png" />
+    <Content Include="Hs_CardImg\1373.png" />
+    <Content Include="Hs_CardImg\1374.png" />
+    <Content Include="Hs_CardImg\1375.png" />
+    <Content Include="Hs_CardImg\1376.png" />
+    <Content Include="Hs_CardImg\1377.png" />
+    <Content Include="Hs_CardImg\1378.png" />
+    <Content Include="Hs_CardImg\1379.png" />
+    <Content Include="Hs_CardImg\138.png" />
+    <Content Include="Hs_CardImg\1380.png" />
+    <Content Include="Hs_CardImg\1381.png" />
+    <Content Include="Hs_CardImg\1382.png" />
+    <Content Include="Hs_CardImg\1383.png" />
+    <Content Include="Hs_CardImg\1384.png" />
+    <Content Include="Hs_CardImg\1385.png" />
+    <Content Include="Hs_CardImg\1386.png" />
+    <Content Include="Hs_CardImg\1387.png" />
+    <Content Include="Hs_CardImg\1388.png" />
+    <Content Include="Hs_CardImg\1389.png" />
+    <Content Include="Hs_CardImg\139.png" />
+    <Content Include="Hs_CardImg\1390.png" />
+    <Content Include="Hs_CardImg\1391.png" />
+    <Content Include="Hs_CardImg\1392.png" />
+    <Content Include="Hs_CardImg\1393.png" />
+    <Content Include="Hs_CardImg\1394.png" />
+    <Content Include="Hs_CardImg\1395.png" />
+    <Content Include="Hs_CardImg\1396.png" />
+    <Content Include="Hs_CardImg\1397.png" />
+    <Content Include="Hs_CardImg\1398.png" />
+    <Content Include="Hs_CardImg\1399.png" />
+    <Content Include="Hs_CardImg\14.png" />
+    <Content Include="Hs_CardImg\140.png" />
+    <Content Include="Hs_CardImg\1400.png" />
+    <Content Include="Hs_CardImg\1401.png" />
+    <Content Include="Hs_CardImg\1402.png" />
+    <Content Include="Hs_CardImg\1403.png" />
+    <Content Include="Hs_CardImg\1404.png" />
+    <Content Include="Hs_CardImg\1405.png" />
+    <Content Include="Hs_CardImg\1406.png" />
+    <Content Include="Hs_CardImg\1407.png" />
+    <Content Include="Hs_CardImg\1408.png" />
+    <Content Include="Hs_CardImg\1409.png" />
+    <Content Include="Hs_CardImg\1410.png" />
+    <Content Include="Hs_CardImg\1411.png" />
+    <Content Include="Hs_CardImg\1412.png" />
+    <Content Include="Hs_CardImg\1413.png" />
+    <Content Include="Hs_CardImg\1414.png" />
+    <Content Include="Hs_CardImg\1415.png" />
+    <Content Include="Hs_CardImg\1416.png" />
+    <Content Include="Hs_CardImg\1417.png" />
+    <Content Include="Hs_CardImg\1418.png" />
+    <Content Include="Hs_CardImg\1419.png" />
+    <Content Include="Hs_CardImg\142.png" />
+    <Content Include="Hs_CardImg\1420.png" />
+    <Content Include="Hs_CardImg\1421.png" />
+    <Content Include="Hs_CardImg\1422.png" />
+    <Content Include="Hs_CardImg\1423.png" />
+    <Content Include="Hs_CardImg\1424.png" />
+    <Content Include="Hs_CardImg\1425.png" />
+    <Content Include="Hs_CardImg\1426.png" />
+    <Content Include="Hs_CardImg\1427.png" />
+    <Content Include="Hs_CardImg\1428.png" />
+    <Content Include="Hs_CardImg\1429.png" />
+    <Content Include="Hs_CardImg\143.png" />
+    <Content Include="Hs_CardImg\1430.png" />
+    <Content Include="Hs_CardImg\1431.png" />
+    <Content Include="Hs_CardImg\1432.png" />
+    <Content Include="Hs_CardImg\1433.png" />
+    <Content Include="Hs_CardImg\1434.png" />
+    <Content Include="Hs_CardImg\1435.png" />
+    <Content Include="Hs_CardImg\1436.png" />
+    <Content Include="Hs_CardImg\1437.png" />
+    <Content Include="Hs_CardImg\1438.png" />
+    <Content Include="Hs_CardImg\1439.png" />
+    <Content Include="Hs_CardImg\1440.png" />
+    <Content Include="Hs_CardImg\1441.png" />
+    <Content Include="Hs_CardImg\1442.png" />
+    <Content Include="Hs_CardImg\1443.png" />
+    <Content Include="Hs_CardImg\1444.png" />
+    <Content Include="Hs_CardImg\1445.png" />
+    <Content Include="Hs_CardImg\1446.png" />
+    <Content Include="Hs_CardImg\1447.png" />
+    <Content Include="Hs_CardImg\1448.png" />
+    <Content Include="Hs_CardImg\1449.png" />
+    <Content Include="Hs_CardImg\1450.png" />
+    <Content Include="Hs_CardImg\1451.png" />
+    <Content Include="Hs_CardImg\1452.png" />
+    <Content Include="Hs_CardImg\1453.png" />
+    <Content Include="Hs_CardImg\1454.png" />
+    <Content Include="Hs_CardImg\1455.png" />
+    <Content Include="Hs_CardImg\1456.png" />
+    <Content Include="Hs_CardImg\1457.png" />
+    <Content Include="Hs_CardImg\1458.png" />
+    <Content Include="Hs_CardImg\1459.png" />
+    <Content Include="Hs_CardImg\146.png" />
+    <Content Include="Hs_CardImg\1460.png" />
+    <Content Include="Hs_CardImg\1461.png" />
+    <Content Include="Hs_CardImg\1462.png" />
+    <Content Include="Hs_CardImg\1463.png" />
+    <Content Include="Hs_CardImg\1464.png" />
+    <Content Include="Hs_CardImg\1465.png" />
+    <Content Include="Hs_CardImg\1466.png" />
+    <Content Include="Hs_CardImg\1467.png" />
+    <Content Include="Hs_CardImg\1468.png" />
+    <Content Include="Hs_CardImg\1469.png" />
+    <Content Include="Hs_CardImg\1470.png" />
+    <Content Include="Hs_CardImg\1471.png" />
+    <Content Include="Hs_CardImg\1472.png" />
+    <Content Include="Hs_CardImg\1473.png" />
+    <Content Include="Hs_CardImg\1474.png" />
+    <Content Include="Hs_CardImg\1475.png" />
+    <Content Include="Hs_CardImg\1476.png" />
+    <Content Include="Hs_CardImg\1477.png" />
+    <Content Include="Hs_CardImg\1478.png" />
+    <Content Include="Hs_CardImg\1479.png" />
+    <Content Include="Hs_CardImg\148.png" />
+    <Content Include="Hs_CardImg\1480.png" />
+    <Content Include="Hs_CardImg\1481.png" />
+    <Content Include="Hs_CardImg\1482.png" />
+    <Content Include="Hs_CardImg\1483.png" />
+    <Content Include="Hs_CardImg\1484.png" />
+    <Content Include="Hs_CardImg\1485.png" />
+    <Content Include="Hs_CardImg\1486.png" />
+    <Content Include="Hs_CardImg\1487.png" />
+    <Content Include="Hs_CardImg\1488.png" />
+    <Content Include="Hs_CardImg\1489.png" />
+    <Content Include="Hs_CardImg\1490.png" />
+    <Content Include="Hs_CardImg\1491.png" />
+    <Content Include="Hs_CardImg\1492.png" />
+    <Content Include="Hs_CardImg\1493.png" />
+    <Content Include="Hs_CardImg\1494.png" />
+    <Content Include="Hs_CardImg\1495.png" />
+    <Content Include="Hs_CardImg\1496.png" />
+    <Content Include="Hs_CardImg\1497.png" />
+    <Content Include="Hs_CardImg\1498.png" />
+    <Content Include="Hs_CardImg\1499.png" />
+    <Content Include="Hs_CardImg\15.png" />
+    <Content Include="Hs_CardImg\150.png" />
+    <Content Include="Hs_CardImg\1500.png" />
+    <Content Include="Hs_CardImg\1501.png" />
+    <Content Include="Hs_CardImg\1502.png" />
+    <Content Include="Hs_CardImg\1503.png" />
+    <Content Include="Hs_CardImg\1504.png" />
+    <Content Include="Hs_CardImg\1505.png" />
+    <Content Include="Hs_CardImg\1506.png" />
+    <Content Include="Hs_CardImg\1507.png" />
+    <Content Include="Hs_CardImg\1508.png" />
+    <Content Include="Hs_CardImg\1509.png" />
+    <Content Include="Hs_CardImg\1510.png" />
+    <Content Include="Hs_CardImg\1511.png" />
+    <Content Include="Hs_CardImg\1512.png" />
+    <Content Include="Hs_CardImg\1513.png" />
+    <Content Include="Hs_CardImg\1514.png" />
+    <Content Include="Hs_CardImg\1515.png" />
+    <Content Include="Hs_CardImg\1516.png" />
+    <Content Include="Hs_CardImg\1517.png" />
+    <Content Include="Hs_CardImg\1518.png" />
+    <Content Include="Hs_CardImg\1519.png" />
+    <Content Include="Hs_CardImg\152.png" />
+    <Content Include="Hs_CardImg\1520.png" />
+    <Content Include="Hs_CardImg\1521.png" />
+    <Content Include="Hs_CardImg\1522.png" />
+    <Content Include="Hs_CardImg\1523.png" />
+    <Content Include="Hs_CardImg\1524.png" />
+    <Content Include="Hs_CardImg\1525.png" />
+    <Content Include="Hs_CardImg\1526.png" />
+    <Content Include="Hs_CardImg\1527.png" />
+    <Content Include="Hs_CardImg\153.png" />
+    <Content Include="Hs_CardImg\156.png" />
+    <Content Include="Hs_CardImg\159.png" />
+    <Content Include="Hs_CardImg\16.png" />
+    <Content Include="Hs_CardImg\160.png" />
+    <Content Include="Hs_CardImg\161.png" />
+    <Content Include="Hs_CardImg\163.png" />
+    <Content Include="Hs_CardImg\165.png" />
+    <Content Include="Hs_CardImg\166.png" />
+    <Content Include="Hs_CardImg\167.png" />
+    <Content Include="Hs_CardImg\168.png" />
+    <Content Include="Hs_CardImg\169.png" />
+    <Content Include="Hs_CardImg\17.png" />
+    <Content Include="Hs_CardImg\170.png" />
+    <Content Include="Hs_CardImg\171.png" />
+    <Content Include="Hs_CardImg\177.png" />
+    <Content Include="Hs_CardImg\178.png" />
+    <Content Include="Hs_CardImg\182.png" />
+    <Content Include="Hs_CardImg\183.png" />
+    <Content Include="Hs_CardImg\184.png" />
+    <Content Include="Hs_CardImg\188.png" />
+    <Content Include="Hs_CardImg\19.png" />
+    <Content Include="Hs_CardImg\191.png" />
+    <Content Include="Hs_CardImg\192.png" />
+    <Content Include="Hs_CardImg\194.png" />
+    <Content Include="Hs_CardImg\2.png" />
+    <Content Include="Hs_CardImg\20.png" />
+    <Content Include="Hs_CardImg\201.png" />
+    <Content Include="Hs_CardImg\202.png" />
+    <Content Include="Hs_CardImg\203.png" />
+    <Content Include="Hs_CardImg\205.png" />
+    <Content Include="Hs_CardImg\206.png" />
+    <Content Include="Hs_CardImg\208.png" />
+    <Content Include="Hs_CardImg\209.png" />
+    <Content Include="Hs_CardImg\21.png" />
+    <Content Include="Hs_CardImg\211.png" />
+    <Content Include="Hs_CardImg\215.png" />
+    <Content Include="Hs_CardImg\217.png" />
+    <Content Include="Hs_CardImg\219.png" />
+    <Content Include="Hs_CardImg\220.png" />
+    <Content Include="Hs_CardImg\222.png" />
+    <Content Include="Hs_CardImg\223.png" />
+    <Content Include="Hs_CardImg\227.png" />
+    <Content Include="Hs_CardImg\228.png" />
+    <Content Include="Hs_CardImg\23.png" />
+    <Content Include="Hs_CardImg\231.png" />
+    <Content Include="Hs_CardImg\233.png" />
+    <Content Include="Hs_CardImg\234.png" />
+    <Content Include="Hs_CardImg\236.png" />
+    <Content Include="Hs_CardImg\238.png" />
+    <Content Include="Hs_CardImg\239.png" />
+    <Content Include="Hs_CardImg\241.png" />
+    <Content Include="Hs_CardImg\242.png" />
+    <Content Include="Hs_CardImg\245.png" />
+    <Content Include="Hs_CardImg\246.png" />
+    <Content Include="Hs_CardImg\248.png" />
+    <Content Include="Hs_CardImg\249.png" />
+    <Content Include="Hs_CardImg\25.png" />
+    <Content Include="Hs_CardImg\252.png" />
+    <Content Include="Hs_CardImg\254.png" />
+    <Content Include="Hs_CardImg\256.png" />
+    <Content Include="Hs_CardImg\257.png" />
+    <Content Include="Hs_CardImg\258.png" />
+    <Content Include="Hs_CardImg\263.png" />
+    <Content Include="Hs_CardImg\267.png" />
+    <Content Include="Hs_CardImg\269.png" />
+    <Content Include="Hs_CardImg\271.png" />
+    <Content Include="Hs_CardImg\272.png" />
+    <Content Include="Hs_CardImg\273.png" />
+    <Content Include="Hs_CardImg\274.png" />
+    <Content Include="Hs_CardImg\275.png" />
+    <Content Include="Hs_CardImg\276.png" />
+    <Content Include="Hs_CardImg\279.png" />
+    <Content Include="Hs_CardImg\28.png" />
+    <Content Include="Hs_CardImg\282.png" />
+    <Content Include="Hs_CardImg\283.png" />
+    <Content Include="Hs_CardImg\284.png" />
+    <Content Include="Hs_CardImg\287.png" />
+    <Content Include="Hs_CardImg\292.png" />
+    <Content Include="Hs_CardImg\295.png" />
+    <Content Include="Hs_CardImg\296.png" />
+    <Content Include="Hs_CardImg\298.png" />
+    <Content Include="Hs_CardImg\299.png" />
+    <Content Include="Hs_CardImg\3.png" />
+    <Content Include="Hs_CardImg\30.png" />
+    <Content Include="Hs_CardImg\301.png" />
+    <Content Include="Hs_CardImg\304.png" />
+    <Content Include="Hs_CardImg\305.png" />
+    <Content Include="Hs_CardImg\306.png" />
+    <Content Include="Hs_CardImg\307.png" />
+    <Content Include="Hs_CardImg\309.png" />
+    <Content Include="Hs_CardImg\31.png" />
+    <Content Include="Hs_CardImg\311.png" />
+    <Content Include="Hs_CardImg\313.png" />
+    <Content Include="Hs_CardImg\315.png" />
+    <Content Include="Hs_CardImg\319.png" />
+    <Content Include="Hs_CardImg\320.png" />
+    <Content Include="Hs_CardImg\322.png" />
+    <Content Include="Hs_CardImg\329.png" />
+    <Content Include="Hs_CardImg\331.png" />
+    <Content Include="Hs_CardImg\332.png" />
+    <Content Include="Hs_CardImg\333.png" />
+    <Content Include="Hs_CardImg\335.png" />
+    <Content Include="Hs_CardImg\338.png" />
+    <Content Include="Hs_CardImg\341.png" />
+    <Content Include="Hs_CardImg\342.png" />
+    <Content Include="Hs_CardImg\344.png" />
+    <Content Include="Hs_CardImg\346.png" />
+    <Content Include="Hs_CardImg\347.png" />
+    <Content Include="Hs_CardImg\35.png" />
+    <Content Include="Hs_CardImg\355.png" />
+    <Content Include="Hs_CardImg\356.png" />
+    <Content Include="Hs_CardImg\357.png" />
+    <Content Include="Hs_CardImg\359.png" />
+    <Content Include="Hs_CardImg\36.png" />
+    <Content Include="Hs_CardImg\360.png" />
+    <Content Include="Hs_CardImg\367.png" />
+    <Content Include="Hs_CardImg\368.png" />
+    <Content Include="Hs_CardImg\370.png" />
+    <Content Include="Hs_CardImg\371.png" />
+    <Content Include="Hs_CardImg\372.png" />
+    <Content Include="Hs_CardImg\373.png" />
+    <Content Include="Hs_CardImg\375.png" />
+    <Content Include="Hs_CardImg\376.png" />
+    <Content Include="Hs_CardImg\378.png" />
+    <Content Include="Hs_CardImg\380.png" />
+    <Content Include="Hs_CardImg\381.png" />
+    <Content Include="Hs_CardImg\384.png" />
+    <Content Include="Hs_CardImg\385.png" />
+    <Content Include="Hs_CardImg\386.png" />
+    <Content Include="Hs_CardImg\387.png" />
+    <Content Include="Hs_CardImg\391.png" />
+    <Content Include="Hs_CardImg\395.png" />
+    <Content Include="Hs_CardImg\397.png" />
+    <Content Include="Hs_CardImg\398.png" />
+    <Content Include="Hs_CardImg\399.png" />
+    <Content Include="Hs_CardImg\402.png" />
+    <Content Include="Hs_CardImg\404.png" />
+    <Content Include="Hs_CardImg\405.png" />
+    <Content Include="Hs_CardImg\406.png" />
+    <Content Include="Hs_CardImg\407.png" />
+    <Content Include="Hs_CardImg\408.png" />
+    <Content Include="Hs_CardImg\409.png" />
+    <Content Include="Hs_CardImg\411.png" />
+    <Content Include="Hs_CardImg\413.png" />
+    <Content Include="Hs_CardImg\415.png" />
+    <Content Include="Hs_CardImg\419.png" />
+    <Content Include="Hs_CardImg\420.png" />
+    <Content Include="Hs_CardImg\423.png" />
+    <Content Include="Hs_CardImg\424.png" />
+    <Content Include="Hs_CardImg\426.png" />
+    <Content Include="Hs_CardImg\430.png" />
+    <Content Include="Hs_CardImg\431.png" />
+    <Content Include="Hs_CardImg\432.png" />
+    <Content Include="Hs_CardImg\434.png" />
+    <Content Include="Hs_CardImg\437.png" />
+    <Content Include="Hs_CardImg\438.png" />
+    <Content Include="Hs_CardImg\44.png" />
+    <Content Include="Hs_CardImg\441.png" />
+    <Content Include="Hs_CardImg\443.png" />
+    <Content Include="Hs_CardImg\444.png" />
+    <Content Include="Hs_CardImg\446.png" />
+    <Content Include="Hs_CardImg\447.png" />
+    <Content Include="Hs_CardImg\448.png" />
+    <Content Include="Hs_CardImg\449.png" />
+    <Content Include="Hs_CardImg\451.png" />
+    <Content Include="Hs_CardImg\453.png" />
+    <Content Include="Hs_CardImg\454.png" />
+    <Content Include="Hs_CardImg\456.png" />
+    <Content Include="Hs_CardImg\459.png" />
+    <Content Include="Hs_CardImg\46.png" />
+    <Content Include="Hs_CardImg\461.png" />
+    <Content Include="Hs_CardImg\465.png" />
+    <Content Include="Hs_CardImg\467.png" />
+    <Content Include="Hs_CardImg\468.png" />
+    <Content Include="Hs_CardImg\469.png" />
+    <Content Include="Hs_CardImg\47.png" />
+    <Content Include="Hs_CardImg\475.png" />
+    <Content Include="Hs_CardImg\477.png" />
+    <Content Include="Hs_CardImg\478.png" />
+    <Content Include="Hs_CardImg\479.png" />
+    <Content Include="Hs_CardImg\480.png" />
+    <Content Include="Hs_CardImg\482.png" />
+    <Content Include="Hs_CardImg\483.png" />
+    <Content Include="Hs_CardImg\485.png" />
+    <Content Include="Hs_CardImg\488.png" />
+    <Content Include="Hs_CardImg\489.png" />
+    <Content Include="Hs_CardImg\49.png" />
+    <Content Include="Hs_CardImg\491.png" />
+    <Content Include="Hs_CardImg\492.png" />
+    <Content Include="Hs_CardImg\493.png" />
+    <Content Include="Hs_CardImg\495.png" />
+    <Content Include="Hs_CardImg\498.png" />
+    <Content Include="Hs_CardImg\499.png" />
+    <Content Include="Hs_CardImg\5.png" />
+    <Content Include="Hs_CardImg\50.png" />
+    <Content Include="Hs_CardImg\500.png" />
+    <Content Include="Hs_CardImg\501.png" />
+    <Content Include="Hs_CardImg\503.png" />
+    <Content Include="Hs_CardImg\505.png" />
+    <Content Include="Hs_CardImg\507.png" />
+    <Content Include="Hs_CardImg\508.png" />
+    <Content Include="Hs_CardImg\509.png" />
+    <Content Include="Hs_CardImg\510.png" />
+    <Content Include="Hs_CardImg\517.png" />
+    <Content Include="Hs_CardImg\518.png" />
+    <Content Include="Hs_CardImg\519.png" />
+    <Content Include="Hs_CardImg\52.png" />
+    <Content Include="Hs_CardImg\520.png" />
+    <Content Include="Hs_CardImg\525.png" />
+    <Content Include="Hs_CardImg\526.png" />
+    <Content Include="Hs_CardImg\527.png" />
+    <Content Include="Hs_CardImg\528.png" />
+    <Content Include="Hs_CardImg\529.png" />
+    <Content Include="Hs_CardImg\53.png" />
+    <Content Include="Hs_CardImg\530.png" />
+    <Content Include="Hs_CardImg\533.png" />
+    <Content Include="Hs_CardImg\534.png" />
+    <Content Include="Hs_CardImg\535.png" />
+    <Content Include="Hs_CardImg\537.png" />
+    <Content Include="Hs_CardImg\539.png" />
+    <Content Include="Hs_CardImg\54.png" />
+    <Content Include="Hs_CardImg\541.png" />
+    <Content Include="Hs_CardImg\543.png" />
+    <Content Include="Hs_CardImg\544.png" />
+    <Content Include="Hs_CardImg\55.png" />
+    <Content Include="Hs_CardImg\550.png" />
+    <Content Include="Hs_CardImg\551.png" />
+    <Content Include="Hs_CardImg\552.png" />
+    <Content Include="Hs_CardImg\553.png" />
+    <Content Include="Hs_CardImg\555.png" />
+    <Content Include="Hs_CardImg\556.png" />
+    <Content Include="Hs_CardImg\559.png" />
+    <Content Include="Hs_CardImg\56.png" />
+    <Content Include="Hs_CardImg\560.png" />
+    <Content Include="Hs_CardImg\564.png" />
+    <Content Include="Hs_CardImg\565.png" />
+    <Content Include="Hs_CardImg\566.png" />
+    <Content Include="Hs_CardImg\567.png" />
+    <Content Include="Hs_CardImg\568.png" />
+    <Content Include="Hs_CardImg\57.png" />
+    <Content Include="Hs_CardImg\570.png" />
+    <Content Include="Hs_CardImg\571.png" />
+    <Content Include="Hs_CardImg\573.png" />
+    <Content Include="Hs_CardImg\575.png" />
+    <Content Include="Hs_CardImg\578.png" />
+    <Content Include="Hs_CardImg\579.png" />
+    <Content Include="Hs_CardImg\58.png" />
+    <Content Include="Hs_CardImg\580.png" />
+    <Content Include="Hs_CardImg\582.png" />
+    <Content Include="Hs_CardImg\584.png" />
+    <Content Include="Hs_CardImg\585.png" />
+    <Content Include="Hs_CardImg\587.png" />
+    <Content Include="Hs_CardImg\589.png" />
+    <Content Include="Hs_CardImg\59.png" />
+    <Content Include="Hs_CardImg\590.png" />
+    <Content Include="Hs_CardImg\591.png" />
+    <Content Include="Hs_CardImg\594.png" />
+    <Content Include="Hs_CardImg\595.png" />
+    <Content Include="Hs_CardImg\596.png" />
+    <Content Include="Hs_CardImg\597.png" />
+    <Content Include="Hs_CardImg\598.png" />
+    <Content Include="Hs_CardImg\599.png" />
+    <Content Include="Hs_CardImg\6.png" />
+    <Content Include="Hs_CardImg\60.png" />
+    <Content Include="Hs_CardImg\602.png" />
+    <Content Include="Hs_CardImg\603.png" />
+    <Content Include="Hs_CardImg\604.png" />
+    <Content Include="Hs_CardImg\605.png" />
+    <Content Include="Hs_CardImg\608.png" />
+    <Content Include="Hs_CardImg\61.png" />
+    <Content Include="Hs_CardImg\611.png" />
+    <Content Include="Hs_CardImg\612.png" />
+    <Content Include="Hs_CardImg\613.png" />
+    <Content Include="Hs_CardImg\614.png" />
+    <Content Include="Hs_CardImg\615.png" />
+    <Content Include="Hs_CardImg\617.png" />
+    <Content Include="Hs_CardImg\62.png" />
+    <Content Include="Hs_CardImg\620.png" />
+    <Content Include="Hs_CardImg\621.png" />
+    <Content Include="Hs_CardImg\622.png" />
+    <Content Include="Hs_CardImg\623.png" />
+    <Content Include="Hs_CardImg\625.png" />
+    <Content Include="Hs_CardImg\626.png" />
+    <Content Include="Hs_CardImg\629.png" />
+    <Content Include="Hs_CardImg\63.png" />
+    <Content Include="Hs_CardImg\630.png" />
+    <Content Include="Hs_CardImg\633.png" />
+    <Content Include="Hs_CardImg\634.png" />
+    <Content Include="Hs_CardImg\636.png" />
+    <Content Include="Hs_CardImg\638.png" />
+    <Content Include="Hs_CardImg\639.png" />
+    <Content Include="Hs_CardImg\64.png" />
+    <Content Include="Hs_CardImg\642.png" />
+    <Content Include="Hs_CardImg\643.png" />
+    <Content Include="Hs_CardImg\645.png" />
+    <Content Include="Hs_CardImg\646.png" />
+    <Content Include="Hs_CardImg\647.png" />
+    <Content Include="Hs_CardImg\648.png" />
+    <Content Include="Hs_CardImg\649.png" />
+    <Content Include="Hs_CardImg\65.png" />
+    <Content Include="Hs_CardImg\650.png" />
+    <Content Include="Hs_CardImg\655.png" />
+    <Content Include="Hs_CardImg\656.png" />
+    <Content Include="Hs_CardImg\657.png" />
+    <Content Include="Hs_CardImg\659.png" />
+    <Content Include="Hs_CardImg\660.png" />
+    <Content Include="Hs_CardImg\664.png" />
+    <Content Include="Hs_CardImg\665.png" />
+    <Content Include="Hs_CardImg\666.png" />
+    <Content Include="Hs_CardImg\667.png" />
+    <Content Include="Hs_CardImg\67.png" />
+    <Content Include="Hs_CardImg\670.png" />
+    <Content Include="Hs_CardImg\672.png" />
+    <Content Include="Hs_CardImg\675.png" />
+    <Content Include="Hs_CardImg\678.png" />
+    <Content Include="Hs_CardImg\681.png" />
+    <Content Include="Hs_CardImg\682.png" />
+    <Content Include="Hs_CardImg\683.png" />
+    <Content Include="Hs_CardImg\686.png" />
+    <Content Include="Hs_CardImg\69.png" />
+    <Content Include="Hs_CardImg\691.png" />
+    <Content Include="Hs_CardImg\696.png" />
+    <Content Include="Hs_CardImg\698.png" />
+    <Content Include="Hs_CardImg\7.png" />
+    <Content Include="Hs_CardImg\700.png" />
+    <Content Include="Hs_CardImg\702.png" />
+    <Content Include="Hs_CardImg\703.png" />
+    <Content Include="Hs_CardImg\704.png" />
+    <Content Include="Hs_CardImg\705.png" />
+    <Content Include="Hs_CardImg\707.png" />
+    <Content Include="Hs_CardImg\708.png" />
+    <Content Include="Hs_CardImg\709.png" />
+    <Content Include="Hs_CardImg\711.png" />
+    <Content Include="Hs_CardImg\712.png" />
+    <Content Include="Hs_CardImg\713.png" />
+    <Content Include="Hs_CardImg\714.png" />
+    <Content Include="Hs_CardImg\715.png" />
+    <Content Include="Hs_CardImg\717.png" />
+    <Content Include="Hs_CardImg\718.png" />
+    <Content Include="Hs_CardImg\719.png" />
+    <Content Include="Hs_CardImg\720.png" />
+    <Content Include="Hs_CardImg\721.png" />
+    <Content Include="Hs_CardImg\722.png" />
+    <Content Include="Hs_CardImg\723.png" />
+    <Content Include="Hs_CardImg\724.png" />
+    <Content Include="Hs_CardImg\725.png" />
+    <Content Include="Hs_CardImg\726.png" />
+    <Content Include="Hs_CardImg\727.png" />
+    <Content Include="Hs_CardImg\728.png" />
+    <Content Include="Hs_CardImg\729.png" />
+    <Content Include="Hs_CardImg\73.png" />
+    <Content Include="Hs_CardImg\730.png" />
+    <Content Include="Hs_CardImg\731.png" />
+    <Content Include="Hs_CardImg\732.png" />
+    <Content Include="Hs_CardImg\733.png" />
+    <Content Include="Hs_CardImg\734.png" />
+    <Content Include="Hs_CardImg\735.png" />
+    <Content Include="Hs_CardImg\736.png" />
+    <Content Include="Hs_CardImg\737.png" />
+    <Content Include="Hs_CardImg\738.png" />
+    <Content Include="Hs_CardImg\739.png" />
+    <Content Include="Hs_CardImg\74.png" />
+    <Content Include="Hs_CardImg\740.png" />
+    <Content Include="Hs_CardImg\741.png" />
+    <Content Include="Hs_CardImg\743.png" />
+    <Content Include="Hs_CardImg\744.png" />
+    <Content Include="Hs_CardImg\745.png" />
+    <Content Include="Hs_CardImg\746.png" />
+    <Content Include="Hs_CardImg\747.png" />
+    <Content Include="Hs_CardImg\748.png" />
+    <Content Include="Hs_CardImg\749.png" />
+    <Content Include="Hs_CardImg\75.png" />
+    <Content Include="Hs_CardImg\750.png" />
+    <Content Include="Hs_CardImg\751.png" />
+    <Content Include="Hs_CardImg\752.png" />
+    <Content Include="Hs_CardImg\753.png" />
+    <Content Include="Hs_CardImg\754.png" />
+    <Content Include="Hs_CardImg\755.png" />
+    <Content Include="Hs_CardImg\756.png" />
+    <Content Include="Hs_CardImg\757.png" />
+    <Content Include="Hs_CardImg\758.png" />
+    <Content Include="Hs_CardImg\759.png" />
+    <Content Include="Hs_CardImg\760.png" />
+    <Content Include="Hs_CardImg\761.png" />
+    <Content Include="Hs_CardImg\762.png" />
+    <Content Include="Hs_CardImg\763.png" />
+    <Content Include="Hs_CardImg\764.png" />
+    <Content Include="Hs_CardImg\765.png" />
+    <Content Include="Hs_CardImg\766.png" />
+    <Content Include="Hs_CardImg\767.png" />
+    <Content Include="Hs_CardImg\768.png" />
+    <Content Include="Hs_CardImg\769.png" />
+    <Content Include="Hs_CardImg\77.png" />
+    <Content Include="Hs_CardImg\770.png" />
+    <Content Include="Hs_CardImg\772.png" />
+    <Content Include="Hs_CardImg\773.png" />
+    <Content Include="Hs_CardImg\774.png" />
+    <Content Include="Hs_CardImg\775.png" />
+    <Content Include="Hs_CardImg\776.png" />
+    <Content Include="Hs_CardImg\778.png" />
+    <Content Include="Hs_CardImg\780.png" />
+    <Content Include="Hs_CardImg\781.png" />
+    <Content Include="Hs_CardImg\782.png" />
+    <Content Include="Hs_CardImg\784.png" />
+    <Content Include="Hs_CardImg\786.png" />
+    <Content Include="Hs_CardImg\789.png" />
+    <Content Include="Hs_CardImg\790.png" />
+    <Content Include="Hs_CardImg\791.png" />
+    <Content Include="Hs_CardImg\792.png" />
+    <Content Include="Hs_CardImg\793.png" />
+    <Content Include="Hs_CardImg\794.png" />
+    <Content Include="Hs_CardImg\795.png" />
+    <Content Include="Hs_CardImg\796.png" />
+    <Content Include="Hs_CardImg\797.png" />
+    <Content Include="Hs_CardImg\798.png" />
+    <Content Include="Hs_CardImg\799.png" />
+    <Content Include="Hs_CardImg\8.png" />
+    <Content Include="Hs_CardImg\800.png" />
+    <Content Include="Hs_CardImg\801.png" />
+    <Content Include="Hs_CardImg\802.png" />
+    <Content Include="Hs_CardImg\803.png" />
+    <Content Include="Hs_CardImg\804.png" />
+    <Content Include="Hs_CardImg\805.png" />
+    <Content Include="Hs_CardImg\806.png" />
+    <Content Include="Hs_CardImg\807.png" />
+    <Content Include="Hs_CardImg\808.png" />
+    <Content Include="Hs_CardImg\809.png" />
+    <Content Include="Hs_CardImg\81.png" />
+    <Content Include="Hs_CardImg\810.png" />
+    <Content Include="Hs_CardImg\811.png" />
+    <Content Include="Hs_CardImg\812.png" />
+    <Content Include="Hs_CardImg\813.png" />
+    <Content Include="Hs_CardImg\814.png" />
+    <Content Include="Hs_CardImg\815.png" />
+    <Content Include="Hs_CardImg\816.png" />
+    <Content Include="Hs_CardImg\817.png" />
+    <Content Include="Hs_CardImg\818.png" />
+    <Content Include="Hs_CardImg\819.png" />
+    <Content Include="Hs_CardImg\820.png" />
+    <Content Include="Hs_CardImg\821.png" />
+    <Content Include="Hs_CardImg\822.png" />
+    <Content Include="Hs_CardImg\823.png" />
+    <Content Include="Hs_CardImg\824.png" />
+    <Content Include="Hs_CardImg\825.png" />
+    <Content Include="Hs_CardImg\826.png" />
+    <Content Include="Hs_CardImg\827.png" />
+    <Content Include="Hs_CardImg\828.png" />
+    <Content Include="Hs_CardImg\829.png" />
+    <Content Include="Hs_CardImg\830.png" />
+    <Content Include="Hs_CardImg\831.png" />
+    <Content Include="Hs_CardImg\832.png" />
+    <Content Include="Hs_CardImg\833.png" />
+    <Content Include="Hs_CardImg\834.png" />
+    <Content Include="Hs_CardImg\835.png" />
+    <Content Include="Hs_CardImg\837.png" />
+    <Content Include="Hs_CardImg\838.png" />
+    <Content Include="Hs_CardImg\839.png" />
+    <Content Include="Hs_CardImg\840.png" />
+    <Content Include="Hs_CardImg\841.png" />
+    <Content Include="Hs_CardImg\842.png" />
+    <Content Include="Hs_CardImg\843.png" />
+    <Content Include="Hs_CardImg\844.png" />
+    <Content Include="Hs_CardImg\845.png" />
+    <Content Include="Hs_CardImg\846.png" />
+    <Content Include="Hs_CardImg\847.png" />
+    <Content Include="Hs_CardImg\848.png" />
+    <Content Include="Hs_CardImg\849.png" />
+    <Content Include="Hs_CardImg\850.png" />
+    <Content Include="Hs_CardImg\851.png" />
+    <Content Include="Hs_CardImg\852.png" />
+    <Content Include="Hs_CardImg\853.png" />
+    <Content Include="Hs_CardImg\854.png" />
+    <Content Include="Hs_CardImg\855.png" />
+    <Content Include="Hs_CardImg\856.png" />
+    <Content Include="Hs_CardImg\857.png" />
+    <Content Include="Hs_CardImg\858.png" />
+    <Content Include="Hs_CardImg\859.png" />
+    <Content Include="Hs_CardImg\86.png" />
+    <Content Include="Hs_CardImg\860.png" />
+    <Content Include="Hs_CardImg\861.png" />
+    <Content Include="Hs_CardImg\862.png" />
+    <Content Include="Hs_CardImg\863.png" />
+    <Content Include="Hs_CardImg\864.png" />
+    <Content Include="Hs_CardImg\865.png" />
+    <Content Include="Hs_CardImg\866.png" />
+    <Content Include="Hs_CardImg\867.png" />
+    <Content Include="Hs_CardImg\868.png" />
+    <Content Include="Hs_CardImg\869.png" />
+    <Content Include="Hs_CardImg\870.png" />
+    <Content Include="Hs_CardImg\871.png" />
+    <Content Include="Hs_CardImg\872.png" />
+    <Content Include="Hs_CardImg\873.png" />
+    <Content Include="Hs_CardImg\874.png" />
+    <Content Include="Hs_CardImg\875.png" />
+    <Content Include="Hs_CardImg\876.png" />
+    <Content Include="Hs_CardImg\877.png" />
+    <Content Include="Hs_CardImg\878.png" />
+    <Content Include="Hs_CardImg\879.png" />
+    <Content Include="Hs_CardImg\880.png" />
+    <Content Include="Hs_CardImg\881.png" />
+    <Content Include="Hs_CardImg\882.png" />
+    <Content Include="Hs_CardImg\883.png" />
+    <Content Include="Hs_CardImg\884.png" />
+    <Content Include="Hs_CardImg\885.png" />
+    <Content Include="Hs_CardImg\886.png" />
+    <Content Include="Hs_CardImg\887.png" />
+    <Content Include="Hs_CardImg\888.png" />
+    <Content Include="Hs_CardImg\889.png" />
+    <Content Include="Hs_CardImg\890.png" />
+    <Content Include="Hs_CardImg\891.png" />
+    <Content Include="Hs_CardImg\892.png" />
+    <Content Include="Hs_CardImg\893.png" />
+    <Content Include="Hs_CardImg\894.png" />
+    <Content Include="Hs_CardImg\895.png" />
+    <Content Include="Hs_CardImg\896.png" />
+    <Content Include="Hs_CardImg\897.png" />
+    <Content Include="Hs_CardImg\898.png" />
+    <Content Include="Hs_CardImg\899.png" />
+    <Content Include="Hs_CardImg\900.png" />
+    <Content Include="Hs_CardImg\901.png" />
+    <Content Include="Hs_CardImg\902.png" />
+    <Content Include="Hs_CardImg\903.png" />
+    <Content Include="Hs_CardImg\904.png" />
+    <Content Include="Hs_CardImg\905.png" />
+    <Content Include="Hs_CardImg\906.png" />
+    <Content Include="Hs_CardImg\907.png" />
+    <Content Include="Hs_CardImg\908.png" />
+    <Content Include="Hs_CardImg\909.png" />
+    <Content Include="Hs_CardImg\91.png" />
+    <Content Include="Hs_CardImg\910.png" />
+    <Content Include="Hs_CardImg\911.png" />
+    <Content Include="Hs_CardImg\912.png" />
+    <Content Include="Hs_CardImg\913.png" />
+    <Content Include="Hs_CardImg\914.png" />
+    <Content Include="Hs_CardImg\915.png" />
+    <Content Include="Hs_CardImg\916.png" />
+    <Content Include="Hs_CardImg\917.png" />
+    <Content Include="Hs_CardImg\918.png" />
+    <Content Include="Hs_CardImg\919.png" />
+    <Content Include="Hs_CardImg\92.png" />
+    <Content Include="Hs_CardImg\920.png" />
+    <Content Include="Hs_CardImg\921.png" />
+    <Content Include="Hs_CardImg\922.png" />
+    <Content Include="Hs_CardImg\923.png" />
+    <Content Include="Hs_CardImg\924.png" />
+    <Content Include="Hs_CardImg\925.png" />
+    <Content Include="Hs_CardImg\926.png" />
+    <Content Include="Hs_CardImg\927.png" />
+    <Content Include="Hs_CardImg\928.png" />
+    <Content Include="Hs_CardImg\929.png" />
+    <Content Include="Hs_CardImg\93.png" />
+    <Content Include="Hs_CardImg\930.png" />
+    <Content Include="Hs_CardImg\931.png" />
+    <Content Include="Hs_CardImg\932.png" />
+    <Content Include="Hs_CardImg\933.png" />
+    <Content Include="Hs_CardImg\934.png" />
+    <Content Include="Hs_CardImg\935.png" />
+    <Content Include="Hs_CardImg\936.png" />
+    <Content Include="Hs_CardImg\937.png" />
+    <Content Include="Hs_CardImg\938.png" />
+    <Content Include="Hs_CardImg\939.png" />
+    <Content Include="Hs_CardImg\94.png" />
+    <Content Include="Hs_CardImg\940.png" />
+    <Content Include="Hs_CardImg\941.png" />
+    <Content Include="Hs_CardImg\942.png" />
+    <Content Include="Hs_CardImg\943.png" />
+    <Content Include="Hs_CardImg\944.png" />
+    <Content Include="Hs_CardImg\945.png" />
+    <Content Include="Hs_CardImg\946.png" />
+    <Content Include="Hs_CardImg\947.png" />
+    <Content Include="Hs_CardImg\948.png" />
+    <Content Include="Hs_CardImg\949.png" />
+    <Content Include="Hs_CardImg\950.png" />
+    <Content Include="Hs_CardImg\951.png" />
+    <Content Include="Hs_CardImg\952.png" />
+    <Content Include="Hs_CardImg\953.png" />
+    <Content Include="Hs_CardImg\954.png" />
+    <Content Include="Hs_CardImg\955.png" />
+    <Content Include="Hs_CardImg\956.png" />
+    <Content Include="Hs_CardImg\957.png" />
+    <Content Include="Hs_CardImg\958.png" />
+    <Content Include="Hs_CardImg\959.png" />
+    <Content Include="Hs_CardImg\960.png" />
+    <Content Include="Hs_CardImg\961.png" />
+    <Content Include="Hs_CardImg\962.png" />
+    <Content Include="Hs_CardImg\963.png" />
+    <Content Include="Hs_CardImg\964.png" />
+    <Content Include="Hs_CardImg\965.png" />
+    <Content Include="Hs_CardImg\966.png" />
+    <Content Include="Hs_CardImg\967.png" />
+    <Content Include="Hs_CardImg\968.png" />
+    <Content Include="Hs_CardImg\969.png" />
+    <Content Include="Hs_CardImg\970.png" />
+    <Content Include="Hs_CardImg\971.png" />
+    <Content Include="Hs_CardImg\972.png" />
+    <Content Include="Hs_CardImg\973.png" />
+    <Content Include="Hs_CardImg\974.png" />
+    <Content Include="Hs_CardImg\975.png" />
+    <Content Include="Hs_CardImg\976.png" />
+    <Content Include="Hs_CardImg\977.png" />
+    <Content Include="Hs_CardImg\978.png" />
+    <Content Include="Hs_CardImg\979.png" />
+    <Content Include="Hs_CardImg\980.png" />
+    <Content Include="Hs_CardImg\981.png" />
+    <Content Include="Hs_CardImg\982.png" />
+    <Content Include="Hs_CardImg\983.png" />
+    <Content Include="Hs_CardImg\984.png" />
+    <Content Include="Hs_CardImg\985.png" />
+    <Content Include="Hs_CardImg\986.png" />
+    <Content Include="Hs_CardImg\987.png" />
+    <Content Include="Hs_CardImg\988.png" />
+    <Content Include="Hs_CardImg\989.png" />
+    <Content Include="Hs_CardImg\99.png" />
+    <Content Include="Hs_CardImg\990.png" />
+    <Content Include="Hs_CardImg\991.png" />
+    <Content Include="Hs_CardImg\992.png" />
+    <Content Include="Hs_CardImg\993.png" />
+    <Content Include="Hs_CardImg\994.png" />
+    <Content Include="Hs_CardImg\995.png" />
+    <Content Include="Hs_CardImg\996.png" />
+    <Content Include="Hs_CardImg\997.png" />
+    <Content Include="Hs_CardImg\998.png" />
+    <Content Include="Hs_CardImg\999.png" />
+    <Content Include="properties.config" />
+    <Content Include="Providers.config" />
+    <Content Include="IBatis.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="SqlMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HS_Model\HS_Model.csproj">
+      <Project>{65e82b33-b390-46bd-b277-1e9d5427d5e3}</Project>
+      <Name>HS_Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBatisService\IBatisService.csproj">
+      <Project>{da53475d-31a5-4889-9184-1338e3c78dbb}</Project>
+      <Name>IBatisService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SolrService\SolrService.csproj">
+      <Project>{87d72d52-7888-493c-a14e-dcc4ff8cbaa6}</Project>
+      <Name>SolrService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>53156</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52805/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,19 @@
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Debug\IBatisService.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Debug\IBatisService.pdb
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Debug\Castle.DynamicProxy.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Debug\IBatisNet.Common.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Debug\IBatisNet.DataMapper.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Debug\IBatisNet.Common.xml
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\bin\Debug\IBatisNet.DataMapper.xml
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\obj\Debug\IBatisService.dll
+C:\Users\zhaojianfei\Documents\Visual Studio 2012\Projects\HearthStone\IBatisService\obj\Debug\IBatisService.pdb
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\bin\Debug\IBatisService.dll
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\bin\Debug\IBatisService.pdb
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\bin\Debug\Castle.DynamicProxy.dll
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\bin\Debug\IBatisNet.Common.dll
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\bin\Debug\IBatisNet.DataMapper.dll
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\bin\Debug\IBatisNet.Common.xml
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\bin\Debug\IBatisNet.DataMapper.xml
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\obj\Debug\IBatisService.dll
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\obj\Debug\IBatisService.pdb
+E:\新建文件夹 (2)\HearthStone项目\HearthStone\IBatisService\obj\Debug\IBatisService.csprojResolveAssemblyReference.cache
