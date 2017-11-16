@@ -31,10 +31,24 @@ namespace Api_HearthStone.Controllers
                 if (repository == null)
                     repository = new IBatisDepository();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
  
             }
+        }
+
+        /// <summary>
+        /// 获取所有卡牌信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [CorsAttribute]
+        [Route("GetAllCard/{key}")]
+        public HttpResponseMessage HS_GetAllCard()
+        {
+            IList<HS_Card> list = repository.HS_GetAllCard<HS_Card>();
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(JsonConvert.SerializeObject(list), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return result; 
         }
 
         /// <summary>
@@ -44,10 +58,11 @@ namespace Api_HearthStone.Controllers
         [HttpGet]
         [CorsAttribute]
         [Route("GetOccupationCardCount/{key}")]
-        public String HS_GetOccupationCardCount()
+        public HttpResponseMessage HS_GetOccupationCardCount()
         {
             DataTable table = repository.HS_GetOccupationCardCount();
-            return DataTableToJson(table);
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(DataTableToJson(table), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return result;
         }
 
         /// <summary>
@@ -57,10 +72,11 @@ namespace Api_HearthStone.Controllers
         [HttpGet]
         [CorsAttribute]
         [Route("GetRarityCardCount/{key}")]
-        public String HS_GetRarityCardCount()
+        public HttpResponseMessage HS_GetRarityCardCount()
         {
             DataTable table = repository.HS_GetRarityCardCount();
-            return DataTableToJson(table);
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(DataTableToJson(table), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return result;
         }
 
         /// <summary>
@@ -70,10 +86,11 @@ namespace Api_HearthStone.Controllers
         [HttpGet]
         [CorsAttribute]
         [Route("GetIsShowCard/{key}")]
-        public String HS_GetIsShowCard()
+        public HttpResponseMessage HS_GetIsShowCard()
         {
             DataTable table = repository.HS_GetIsShowCard();
-            return DataTableToJson(table);
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(DataTableToJson(table), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return result;
         }
 
         /// <summary>
@@ -83,17 +100,11 @@ namespace Api_HearthStone.Controllers
         [HttpGet]
         [CorsAttribute]
         [Route("GetOccupationShowCard/{key}")]
-        public String HS_GetOccupationShowCard()
+        public HttpResponseMessage HS_GetOccupationShowCard()
         {
-            try
-            {
-                DataTable table = repository.HS_GetOccupationShowCard();
-                return DataTableToJson(table);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            DataTable table = repository.HS_GetOccupationShowCard();
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(DataTableToJson(table), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return result;
         }
 
         /// <summary>
@@ -103,17 +114,11 @@ namespace Api_HearthStone.Controllers
         [HttpGet]
         [CorsAttribute]
         [Route("GetClassicCard/{key}")]
-        public String HS_GetClassicCard()
+        public HttpResponseMessage HS_GetClassicCard()
         {
-            try
-            {
-                DataTable table = repository.HS_GetClassicCard();
-                return DataTableToJson(table);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            DataTable table = repository.HS_GetClassicCard();
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(DataTableToJson(table), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return result;
         }
 
         /// <summary>
@@ -123,17 +128,25 @@ namespace Api_HearthStone.Controllers
         [HttpGet]
         [CorsAttribute]
         [Route("GetFrostThroneCard/{key}")]
-        public String HS_GetFrostThroneCard()
+        public HttpResponseMessage HS_GetFrostThroneCard()
         {
-            try
-            {
-                DataTable table = repository.HS_GetFrostThroneCard();
-                return DataTableToJson(table);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            DataTable table = repository.HS_GetFrostThroneCard();
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(DataTableToJson(table), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return result;
+        }
+
+        /// <summary>
+        /// 获取单张卡牌信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [CorsAttribute]
+        [Route("GetOneCard/{id}")]
+        public String HS_GetOneCard([FromUri]int id)
+        {
+            IList<HS_Card> list = repository.HS_GetOneCard<HS_Card>(id);
+            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(JsonConvert.SerializeObject(list[0]), Encoding.GetEncoding("UTF-8"), "application/json") };
+            return JsonConvert.SerializeObject(list[0]);
         }
         private string DataTableToJson(DataTable table)
         {
